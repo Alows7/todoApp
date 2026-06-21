@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 export const getAllNotes = async (_, res) => {
   try {
-    const notes = await Note.find().sort({ createdAt: 1 }); // order by desc, asc (-1, 1);
+    const notes = await Note.find(); //.sort({ createdAt: 1 }); // order by desc, asc (-1, 1);
     res.status(200).json(notes);
   } catch (error) {
     console.error("Error at getAllNotes controllers ", error);
